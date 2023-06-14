@@ -115,7 +115,7 @@ void *gen_deauth_pkt(uint8_t ap_mac_addr[ETH_ALEN], uint8_t station_mac_addr[ETH
     radiotap_hdr = deauth_pkt;
     radiotap_hdr->it_version = PKTHDR_RADIOTAP_VERSION;
     radiotap_hdr->it_len = sizeof(*radiotap_hdr);
-    radiotap_hdr->it_present = 0x8004;
+    radiotap_hdr->it_present = 0;
 
     frm = (char *)radiotap_hdr + radiotap_hdr->it_len;
     frm->proto_ver = 0;     /* WLAN(PV0) */
@@ -144,7 +144,7 @@ void *gen_auth_pkt(uint8_t ap_mac_addr[ETH_ALEN], uint8_t station_mac_addr[ETH_A
     radiotap_hdr = auth_pkt;
     radiotap_hdr->it_version = PKTHDR_RADIOTAP_VERSION;
     radiotap_hdr->it_len = sizeof(*radiotap_hdr);
-    radiotap_hdr->it_present = 0x8004;
+    radiotap_hdr->it_present = 0;
 
     frm = (char *)radiotap_hdr + radiotap_hdr->it_len;
     frm->proto_ver = 0;     /* WLAN(PV0) */
